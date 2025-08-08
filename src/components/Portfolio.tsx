@@ -1,5 +1,5 @@
 import React from 'react';
-import { ExternalLink, Calendar, Users, Shield, DollarSign, GraduationCap, Building2, Cpu } from 'lucide-react';
+import { ExternalLink, Calendar, Users, Shield, DollarSign, GraduationCap, Building2, Cpu, Home } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 
 const Portfolio = () => {
@@ -22,7 +22,7 @@ const Portfolio = () => {
       title: t('portfolio.projects.financeRecord.title'),
       description: t('portfolio.projects.financeRecord.description'),
       image: 'https://images.pexels.com/photos/6801648/pexels-photo-6801648.jpeg?auto=compress&cs=tinysrgb&w=800',
-      link: 'https://financedemo-phi.vercel.app/login',
+      link: '#',
       technologies: ['React', 'Node.js', 'MongoDB', 'Chart.js'],
       features: t('portfolio.projects.financeRecord.features'),
       icon: <DollarSign size={24} />,
@@ -60,6 +60,17 @@ const Portfolio = () => {
       features: t('portfolio.projects.itTips.features'),
       icon: <Cpu size={24} />,
       category: 'Website'
+    },
+    {
+      id: 6,
+      title: t('portfolio.projects.smartHome.title'),
+      description: t('portfolio.projects.smartHome.description'),
+      image: 'https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&w=800',
+      link: '#',
+      technologies: ['IoT', 'Arduino', 'React Native', 'Node.js'],
+      features: t('portfolio.projects.smartHome.features'),
+      icon: <Home size={24} />,
+      category: 'Hardware + Software'
     }
   ];
 

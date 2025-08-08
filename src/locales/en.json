@@ -94,6 +94,16 @@
           "Cybersecurity guides",
           "Career development tips"
         ]
+      },
+      "smartHome": {
+        "title": "Smart Home Automation System",
+        "description": "An intelligent IoT-based home automation system that allows users to control lighting, temperature, security, and appliances remotely. Features voice control integration, energy monitoring, automated scheduling, and mobile app connectivity.",
+        "features": [
+          "Remote device control",
+          "Voice assistant integration",
+          "Energy usage monitoring",
+          "Automated scheduling"
+        ]
       }
     }
   },
@@ -156,9 +166,10 @@
       "Consultation Only"
     ],
     "budgetRanges": [
-      "$100 - $500",
-      "$1000 - $5000",
-      "$10000 - $20,000",
+      "$1,000 - $5,000",
+      "$5,000 - $15,000",
+      "$15,000 - $50,000",
+      "$50,000+",
       "Let's Discuss"
     ]
   },

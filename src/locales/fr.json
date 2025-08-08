@@ -94,6 +94,16 @@
           "Guides de cybersécurité",
           "Conseils de développement de carrière"
         ]
+      },
+      "smartHome": {
+        "title": "Système Domotique Intelligent",
+        "description": "Un système domotique intelligent basé sur l'IoT qui permet aux utilisateurs de contrôler l'éclairage, la température, la sécurité et les appareils à distance. Comprend l'intégration de contrôle vocal, surveillance énergétique, planification automatisée et connectivité d'application mobile.",
+        "features": [
+          "Contrôle d'appareils à distance",
+          "Intégration assistant vocal",
+          "Surveillance de consommation énergétique",
+          "Planification automatisée"
+        ]
       }
     }
   },
