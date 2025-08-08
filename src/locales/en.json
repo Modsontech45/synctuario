@@ -1,0 +1,183 @@
+{
+  "nav": {
+    "home": "Home",
+    "services": "Services",
+    "portfolio": "Portfolio",
+    "about": "About",
+    "contact": "Contact"
+  },
+  "hero": {
+    "title": "SYNCTUARIO",
+    "subtitle": "Digital Innovation & Growth Solutions",
+    "description": "We transform businesses through cutting-edge affiliate marketing strategies, custom web applications that solve real problems, innovative hardware design solutions, and strategic social media growth that builds authentic communities.",
+    "startProject": "Start Your Project",
+    "viewWork": "View Our Work",
+    "projectsCompleted": "Projects Completed",
+    "happyClients": "Happy Clients",
+    "supportAvailable": "Support Available",
+    "clientRating": "Client Rating"
+  },
+  "services": {
+    "title": "Our Services",
+    "subtitle": "Comprehensive digital solutions tailored to accelerate your business growth and maximize your online presence",
+    "affiliateMarketing": "Affiliate Marketing",
+    "affiliateDesc": "Strategic affiliate marketing campaigns that drive revenue and maximize ROI through data-driven approaches.",
+    "webDevelopment": "Web App Development",
+    "webDesc": "Custom web applications built to solve real problems with modern technologies and seamless user experiences.",
+    "hardwareDesign": "Hardware Design",
+    "hardwareDesc": "Innovative hardware solutions designed from concept to production, bridging digital and physical worlds.",
+    "socialMedia": "Social Media Growth",
+    "socialDesc": "Comprehensive social media strategies that build authentic communities and accelerate brand growth.",
+    "learnMore": "Learn More",
+    "ctaTitle": "Ready to Transform Your Business?",
+    "ctaDesc": "Let's discuss how our expertise can help you achieve your goals and take your business to the next level.",
+    "freeConsultation": "Get Free Consultation"
+  },
+  "portfolio": {
+    "title": "Our Portfolio",
+    "subtitle": "Showcasing our expertise in building innovative solutions that solve real-world problems",
+    "liveProject": "Live Project",
+    "comingSoon": "Coming Soon",
+    "keyFeatures": "Key Features",
+    "viewLive": "View Live",
+    "inDevelopment": "In Development",
+    "ctaTitle": "Ready to Start Your Project?",
+    "ctaDesc": "From web applications to corporate websites, we deliver solutions that drive results. Let's discuss how we can bring your vision to life.",
+    "startYourProject": "Start Your Project",
+    "projects": {
+      "rfidAttendance": {
+        "title": "RFID Attendance System",
+        "description": "A comprehensive RFID-based attendance tracking system built with modern web technologies. Uses ID card scanning for seamless attendance tracking with real-time monitoring, user management, and detailed reporting capabilities.",
+        "features": [
+          "Real-time attendance tracking",
+          "User management system",
+          "Detailed reporting dashboard",
+          "ID card scanning integration"
+        ]
+      },
+      "financeRecord": {
+        "title": "Finance Record Web App",
+        "description": "A comprehensive financial management system for tracking income, expenses, budgets, and generating detailed financial reports. Features secure user authentication, data visualization, and multi-currency support.",
+        "features": [
+          "Income & expense tracking",
+          "Budget management",
+          "Financial reports & analytics",
+          "Multi-currency support"
+        ]
+      },
+      "financialTips": {
+        "title": "Financial Tips & Healthy Life Website",
+        "description": "A comprehensive wellness platform combining financial literacy with health and lifestyle guidance. Features budgeting tools, investment tips, fitness tracking, nutrition guides, and mental health resources.",
+        "features": [
+          "Financial planning tools",
+          "Health & fitness tracking",
+          "Investment calculators",
+          "Wellness content library"
+        ]
+      },
+      "relationshipTips": {
+        "title": "Relationship & Content Creation Tips",
+        "description": "A dynamic platform offering relationship advice, dating tips, and comprehensive content creation guides. Features interactive tools for social media growth, video editing tutorials, and relationship coaching resources.",
+        "features": [
+          "Relationship advice articles",
+          "Content creation tutorials",
+          "Social media templates",
+          "Interactive coaching tools"
+        ]
+      },
+      "itTips": {
+        "title": "IT Tips & Technology Hub",
+        "description": "A comprehensive technology resource platform featuring programming tutorials, software reviews, cybersecurity tips, and the latest tech trends. Includes code snippets, troubleshooting guides, and career advice for IT professionals.",
+        "features": [
+          "Programming tutorials",
+          "Tech news & reviews",
+          "Cybersecurity guides",
+          "Career development tips"
+        ]
+      }
+    }
+  },
+  "about": {
+    "title": "Why Choose Synctuario?",
+    "description": "At Synctuario, we bridge the gap between innovative technology and practical business solutions. Our multidisciplinary approach combines proven affiliate marketing strategies, custom software development, cutting-edge hardware design, and authentic social media growth techniques.",
+    "strategicApproach": "Strategic Approach",
+    "strategicDesc": "Every project begins with understanding your unique goals and challenges.",
+    "rapidExecution": "Rapid Execution",
+    "rapidDesc": "Fast turnaround times without compromising on quality or attention to detail.",
+    "provenResults": "Proven Results",
+    "provenDesc": "Track record of delivering measurable outcomes across all service areas.",
+    "expertiseIncludes": "Our Expertise Includes:",
+    "performanceMarketing": "Performance Marketing & Conversion Optimization",
+    "webApplications": "React, Node.js, Python Web Applications",
+    "iotDevices": "IoT Devices & Custom Electronics",
+    "socialGrowth": "Instagram, TikTok, YouTube Growth Strategies",
+    "mission": "Our Mission",
+    "missionDesc": "To empower businesses and entrepreneurs with innovative digital solutions that drive sustainable growth, enhance user experiences, and create lasting competitive advantages in today's rapidly evolving digital landscape.",
+    "projectsCompleted": "Projects Completed",
+    "clientSatisfaction": "Client Satisfaction",
+    "support": "Support",
+    "yearsExperience": "Years Experience"
+  },
+  "contact": {
+    "title": "Get In Touch",
+    "subtitle": "Ready to transform your business? Let's discuss how we can help you achieve your goals and accelerate your growth.",
+    "contactInfo": "Contact Information",
+    "emailUs": "Email Us",
+    "callUs": "Call Us",
+    "location": "Location",
+    "businessHours": "Business Hours",
+    "mondayFriday": "Monday - Friday",
+    "saturday": "Saturday",
+    "sunday": "Sunday",
+    "emergencySupport": "Emergency Support Only",
+    "emergencyAvailable": "24/7 Emergency Support available for critical issues",
+    "yourName": "Your Name",
+    "enterName": "Enter your full name",
+    "emailAddress": "Email Address",
+    "serviceInterested": "Service Interested In",
+    "selectService": "Select a service",
+    "projectBudget": "Project Budget (Optional)",
+    "selectBudget": "Select budget range",
+    "message": "Message",
+    "messagePlaceholder": "Tell us about your project, goals, and how we can help you succeed...",
+    "sendMessage": "Send Message",
+    "sending": "Sending...",
+    "responseTime": "We typically respond within 2-4 hours during business hours",
+    "successMessage": "✓ Message sent successfully! We'll get back to you within 24 hours.",
+    "errorMessage": "✗ Something went wrong. Please try again or contact us directly.",
+    "services": [
+      "Affiliate Marketing",
+      "Web App Development",
+      "Hardware Design",
+      "Social Media Growth",
+      "SEO & Digital Marketing",
+      "E-commerce Solutions",
+      "Custom Solution",
+      "Consultation Only"
+    ],
+    "budgetRanges": [
+      "$1,000 - $5,000",
+      "$5,000 - $15,000",
+      "$15,000 - $50,000",
+      "$50,000+",
+      "Let's Discuss"
+    ]
+  },
+  "footer": {
+    "description": "Transforming businesses through innovative digital solutions, cutting-edge technology, and strategic growth strategies that deliver measurable results.",
+    "services": "Services",
+    "quickLinks": "Quick Links",
+    "allRightsReserved": "All rights reserved.",
+    "madeWith": "Made with",
+    "byTeam": "by Synctuario Team",
+    "privacyPolicy": "Privacy Policy",
+    "termsOfService": "Terms of Service",
+    "servicesList": [
+      "Affiliate Marketing",
+      "Web Development",
+      "Hardware Design",
+      "Social Media Growth",
+      "SEO & Digital Marketing"
+    ]
+  }
+}

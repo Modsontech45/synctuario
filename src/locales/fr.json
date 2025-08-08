@@ -1,0 +1,183 @@
+{
+  "nav": {
+    "home": "Accueil",
+    "services": "Services",
+    "portfolio": "Portfolio",
+    "about": "À Propos",
+    "contact": "Contact"
+  },
+  "hero": {
+    "title": "SYNCTUARIO",
+    "subtitle": "Innovation Numérique & Solutions de Croissance",
+    "description": "Nous transformons les entreprises grâce à des stratégies de marketing d'affiliation de pointe, des applications web personnalisées qui résolvent de vrais problèmes, des solutions de conception matérielle innovantes et une croissance stratégique des médias sociaux qui construit des communautés authentiques.",
+    "startProject": "Démarrer Votre Projet",
+    "viewWork": "Voir Notre Travail",
+    "projectsCompleted": "Projets Terminés",
+    "happyClients": "Clients Satisfaits",
+    "supportAvailable": "Support Disponible",
+    "clientRating": "Note Client"
+  },
+  "services": {
+    "title": "Nos Services",
+    "subtitle": "Solutions numériques complètes adaptées pour accélérer la croissance de votre entreprise et maximiser votre présence en ligne",
+    "affiliateMarketing": "Marketing d'Affiliation",
+    "affiliateDesc": "Campagnes de marketing d'affiliation stratégiques qui génèrent des revenus et maximisent le ROI grâce à des approches basées sur les données.",
+    "webDevelopment": "Développement d'Applications Web",
+    "webDesc": "Applications web personnalisées conçues pour résoudre de vrais problèmes avec des technologies modernes et des expériences utilisateur fluides.",
+    "hardwareDesign": "Conception Matérielle",
+    "hardwareDesc": "Solutions matérielles innovantes conçues du concept à la production, reliant les mondes numérique et physique.",
+    "socialMedia": "Croissance des Médias Sociaux",
+    "socialDesc": "Stratégies complètes de médias sociaux qui construisent des communautés authentiques et accélèrent la croissance de la marque.",
+    "learnMore": "En Savoir Plus",
+    "ctaTitle": "Prêt à Transformer Votre Entreprise?",
+    "ctaDesc": "Discutons de la façon dont notre expertise peut vous aider à atteindre vos objectifs et faire passer votre entreprise au niveau supérieur.",
+    "freeConsultation": "Consultation Gratuite"
+  },
+  "portfolio": {
+    "title": "Notre Portfolio",
+    "subtitle": "Présentation de notre expertise dans la création de solutions innovantes qui résolvent des problèmes du monde réel",
+    "liveProject": "Projet En Direct",
+    "comingSoon": "Bientôt Disponible",
+    "keyFeatures": "Fonctionnalités Clés",
+    "viewLive": "Voir En Direct",
+    "inDevelopment": "En Développement",
+    "ctaTitle": "Prêt à Démarrer Votre Projet?",
+    "ctaDesc": "Des applications web aux sites web d'entreprise, nous livrons des solutions qui génèrent des résultats. Discutons de la façon dont nous pouvons donner vie à votre vision.",
+    "startYourProject": "Démarrer Votre Projet",
+    "projects": {
+      "rfidAttendance": {
+        "title": "Système de Présence RFID",
+        "description": "Un système complet de suivi de présence basé sur RFID construit avec des technologies web modernes. Utilise le scan de cartes d'identité pour un suivi de présence fluide avec surveillance en temps réel, gestion des utilisateurs et capacités de rapport détaillées.",
+        "features": [
+          "Suivi de présence en temps réel",
+          "Système de gestion des utilisateurs",
+          "Tableau de bord de rapports détaillés",
+          "Intégration de scan de cartes d'identité"
+        ]
+      },
+      "financeRecord": {
+        "title": "Application Web de Gestion Financière",
+        "description": "Un système complet de gestion financière pour suivre les revenus, dépenses, budgets et générer des rapports financiers détaillés. Comprend une authentification utilisateur sécurisée, visualisation de données et support multi-devises.",
+        "features": [
+          "Suivi des revenus et dépenses",
+          "Gestion de budget",
+          "Rapports et analyses financières",
+          "Support multi-devises"
+        ]
+      },
+      "financialTips": {
+        "title": "Site Web de Conseils Financiers et Vie Saine",
+        "description": "Une plateforme de bien-être complète combinant l'éducation financière avec des conseils de santé et de style de vie. Comprend des outils de budgétisation, conseils d'investissement, suivi de fitness, guides nutritionnels et ressources de santé mentale.",
+        "features": [
+          "Outils de planification financière",
+          "Suivi de santé et fitness",
+          "Calculateurs d'investissement",
+          "Bibliothèque de contenu bien-être"
+        ]
+      },
+      "relationshipTips": {
+        "title": "Conseils Relationnels et Création de Contenu",
+        "description": "Une plateforme dynamique offrant des conseils relationnels, conseils de rencontres et guides complets de création de contenu. Comprend des outils interactifs pour la croissance des médias sociaux, tutoriels de montage vidéo et ressources de coaching relationnel.",
+        "features": [
+          "Articles de conseils relationnels",
+          "Tutoriels de création de contenu",
+          "Modèles de médias sociaux",
+          "Outils de coaching interactifs"
+        ]
+      },
+      "itTips": {
+        "title": "Conseils IT et Hub Technologique",
+        "description": "Une plateforme de ressources technologiques complète avec tutoriels de programmation, critiques de logiciels, conseils de cybersécurité et dernières tendances tech. Inclut des extraits de code, guides de dépannage et conseils de carrière pour les professionnels IT.",
+        "features": [
+          "Tutoriels de programmation",
+          "Actualités et critiques tech",
+          "Guides de cybersécurité",
+          "Conseils de développement de carrière"
+        ]
+      }
+    }
+  },
+  "about": {
+    "title": "Pourquoi Choisir Synctuario?",
+    "description": "Chez Synctuario, nous comblons le fossé entre la technologie innovante et les solutions commerciales pratiques. Notre approche multidisciplinaire combine des stratégies de marketing d'affiliation éprouvées, le développement de logiciels personnalisés, la conception matérielle de pointe et des techniques de croissance authentique des médias sociaux.",
+    "strategicApproach": "Approche Stratégique",
+    "strategicDesc": "Chaque projet commence par comprendre vos objectifs et défis uniques.",
+    "rapidExecution": "Exécution Rapide",
+    "rapidDesc": "Délais d'exécution rapides sans compromettre la qualité ou l'attention aux détails.",
+    "provenResults": "Résultats Prouvés",
+    "provenDesc": "Historique de livraison de résultats mesurables dans tous les domaines de service.",
+    "expertiseIncludes": "Notre Expertise Comprend:",
+    "performanceMarketing": "Marketing de Performance & Optimisation de Conversion",
+    "webApplications": "Applications Web React, Node.js, Python",
+    "iotDevices": "Appareils IoT & Électronique Personnalisée",
+    "socialGrowth": "Stratégies de Croissance Instagram, TikTok, YouTube",
+    "mission": "Notre Mission",
+    "missionDesc": "Autonomiser les entreprises et entrepreneurs avec des solutions numériques innovantes qui stimulent une croissance durable, améliorent les expériences utilisateur et créent des avantages concurrentiels durables dans le paysage numérique en évolution rapide d'aujourd'hui.",
+    "projectsCompleted": "Projets Terminés",
+    "clientSatisfaction": "Satisfaction Client",
+    "support": "Support",
+    "yearsExperience": "Années d'Expérience"
+  },
+  "contact": {
+    "title": "Contactez-Nous",
+    "subtitle": "Prêt à transformer votre entreprise? Discutons de la façon dont nous pouvons vous aider à atteindre vos objectifs et accélérer votre croissance.",
+    "contactInfo": "Informations de Contact",
+    "emailUs": "Envoyez-nous un Email",
+    "callUs": "Appelez-nous",
+    "location": "Localisation",
+    "businessHours": "Heures d'Ouverture",
+    "mondayFriday": "Lundi - Vendredi",
+    "saturday": "Samedi",
+    "sunday": "Dimanche",
+    "emergencySupport": "Support d'Urgence Seulement",
+    "emergencyAvailable": "Support d'urgence 24/7 disponible pour les problèmes critiques",
+    "yourName": "Votre Nom",
+    "enterName": "Entrez votre nom complet",
+    "emailAddress": "Adresse Email",
+    "serviceInterested": "Service qui Vous Intéresse",
+    "selectService": "Sélectionnez un service",
+    "projectBudget": "Budget du Projet (Optionnel)",
+    "selectBudget": "Sélectionnez une fourchette de budget",
+    "message": "Message",
+    "messagePlaceholder": "Parlez-nous de votre projet, de vos objectifs et de la façon dont nous pouvons vous aider à réussir...",
+    "sendMessage": "Envoyer le Message",
+    "sending": "Envoi en cours...",
+    "responseTime": "Nous répondons généralement dans les 2-4 heures pendant les heures d'ouverture",
+    "successMessage": "✓ Message envoyé avec succès! Nous vous répondrons dans les 24 heures.",
+    "errorMessage": "✗ Quelque chose s'est mal passé. Veuillez réessayer ou nous contacter directement.",
+    "services": [
+      "Marketing d'Affiliation",
+      "Développement d'Applications Web",
+      "Conception Matérielle",
+      "Croissance des Médias Sociaux",
+      "SEO & Marketing Numérique",
+      "Solutions E-commerce",
+      "Solution Personnalisée",
+      "Consultation Seulement"
+    ],
+    "budgetRanges": [
+      "1 000$ - 5 000$",
+      "5 000$ - 15 000$",
+      "15 000$ - 50 000$",
+      "50 000$+",
+      "Discutons-en"
+    ]
+  },
+  "footer": {
+    "description": "Transformer les entreprises grâce à des solutions numériques innovantes, une technologie de pointe et des stratégies de croissance stratégiques qui livrent des résultats mesurables.",
+    "services": "Services",
+    "quickLinks": "Liens Rapides",
+    "allRightsReserved": "Tous droits réservés.",
+    "madeWith": "Conçu avec",
+    "byTeam": "par l'équipe Synctuario",
+    "privacyPolicy": "Politique de Confidentialité",
+    "termsOfService": "Conditions d'Utilisation",
+    "servicesList": [
+      "Marketing d'Affiliation",
+      "Développement Web",
+      "Conception Matérielle",
+      "Croissance des Médias Sociaux",
+      "SEO & Marketing Numérique"
+    ]
+  }
+}
