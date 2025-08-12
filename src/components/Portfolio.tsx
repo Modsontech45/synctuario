@@ -22,7 +22,7 @@ const Portfolio = () => {
       title: t('portfolio.projects.financeRecord.title'),
       description: t('portfolio.projects.financeRecord.description'),
       image: 'https://images.pexels.com/photos/6801648/pexels-photo-6801648.jpeg?auto=compress&cs=tinysrgb&w=800',
-      link: '#',
+      link: 'https://financedemo-phi.vercel.app/login',
       technologies: ['React', 'Node.js', 'MongoDB', 'Chart.js'],
       features: t('portfolio.projects.financeRecord.features'),
       icon: <DollarSign size={24} />,
