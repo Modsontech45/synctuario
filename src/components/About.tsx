@@ -120,6 +120,19 @@ const About = () => {
                     { number: '3+', label: t('about.yearsExperience') }
                   ].map((stat, index) => (
                     <div 
+                      key={index}
+                      className="text-center p-4 bg-gray-50 rounded-2xl hover:bg-green-50 transition-all duration-300"
+                    >
+                      <div className="text-2xl font-bold text-green-600 mb-2">{stat.number}</div>
+                      <div className="text-sm text-gray-600">{stat.label}</div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
         {/* Personal Story Section */}
         <div className="lg:col-span-2 mt-20 fade-in-section">
           <div className="bg-gradient-to-r from-gray-50 to-green-50 rounded-3xl p-12 border border-gray-100 shadow-xl hover:shadow-2xl transition-all duration-700">
@@ -153,10 +166,10 @@ const About = () => {
               </div>
             </div>
           </div>
+        </div>
       </div>
     </section>
   );
 };
 
 export default About;
-      <div className="relative fade-in-section lg:col-span-1">
