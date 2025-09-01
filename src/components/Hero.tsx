@@ -1,115 +1,121 @@
-import React from 'react';
-import { ArrowRight, Play } from 'lucide-react';
+import React, { useEffect, useState } from 'react';
+import { ArrowRight, Play, Sparkles } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 
 const Hero = () => {
   const { t } = useLanguage();
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    setIsVisible(true);
+  }, []);
 
   const handleGetStarted = () => {
     document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' });
   };
 
   const handleWatchDemo = () => {
-    // Mock demo functionality - could open a modal or redirect
     alert('Demo coming soon! Contact us for a personalized demonstration of our services.');
   };
 
   return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Animated Background */}
-      <div className="absolute inset-0 z-0">
-        <div className="absolute inset-0 bg-gradient-to-br from-black via-gray-900 to-black"></div>
+    <section id="home" className="relative min-h-screen flex items-center justify-center bg-white overflow-hidden">
+      {/* Animated Background Elements */}
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute top-20 left-10 w-32 h-32 bg-green-100 rounded-full animate-float delay-100 opacity-60"></div>
+        <div className="absolute top-40 right-20 w-24 h-24 bg-green-200 rounded-full animate-float delay-300 opacity-40"></div>
+        <div className="absolute bottom-40 left-1/4 w-40 h-40 bg-green-50 rounded-full animate-float delay-500 opacity-50"></div>
+        <div className="absolute bottom-20 right-1/3 w-28 h-28 bg-green-100 rounded-full animate-float delay-700 opacity-30"></div>
         
-        {/* Floating Animation Elements */}
-        <div className="absolute inset-0">
-          <div className="animate-float-1 absolute top-20 left-10 w-20 h-20 bg-green-500/30 rounded-full blur-xl"></div>
-          <div className="animate-float-2 absolute top-40 right-20 w-32 h-32 bg-emerald-500/20 rounded-full blur-xl"></div>
-          <div className="animate-float-3 absolute bottom-40 left-1/4 w-24 h-24 bg-green-400/25 rounded-full blur-xl"></div>
-          <div className="animate-float-4 absolute bottom-20 right-1/3 w-28 h-28 bg-teal-500/20 rounded-full blur-xl"></div>
-          <div className="animate-float-1 absolute top-1/2 left-1/2 w-16 h-16 bg-green-300/15 rounded-full blur-xl animation-delay-1000"></div>
+        {/* Floating Sparkles */}
+        <div className="absolute top-1/3 left-1/3 animate-float delay-200">
+          <Sparkles size={24} className="text-green-400 opacity-60" />
         </div>
-
-        {/* Grid Pattern */}
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute inset-0 bg-grid-pattern animate-grid-move"></div>
-        </div>
-
-        {/* Video-like Animation Overlay */}
-        <div className="absolute inset-0">
-          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-            <div className="text-6xl font-bold opacity-5 animate-pulse-slow text-green-500">SYNCTUARIO</div>
-          </div>
-          <div className="absolute top-1/3 left-1/4 transform -translate-x-1/2 -translate-y-1/2">
-            <div className="text-2xl font-light opacity-3 animate-pulse-slow animation-delay-2000 text-green-400">INNOVATION</div>
-          </div>
-          <div className="absolute bottom-1/3 right-1/4 transform translate-x-1/2 translate-y-1/2">
-            <div className="text-3xl font-medium opacity-3 animate-pulse-slow animation-delay-3000 text-emerald-400">SOLUTIONS</div>
-          </div>
+        <div className="absolute top-2/3 right-1/4 animate-float delay-600">
+          <Sparkles size={20} className="text-green-500 opacity-40" />
         </div>
       </div>
 
       {/* Hero Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <div className="animate-fadeInUp">
-          <h1 className="text-5xl md:text-7xl font-bold mb-6">
-            <span className="bg-gradient-to-r from-green-400 via-emerald-500 to-teal-400 bg-clip-text text-transparent animate-gradient">
-              {t('hero.title')}
-            </span>
-          </h1>
+        <div className={`transition-all duration-1000 ${isVisible ? 'opacity-100' : 'opacity-0'}`}>
+          {/* Main Title with Typewriter Effect */}
+          <div className="mb-8">
+            <h1 className="text-responsive-xl font-black mb-4 text-black">
+              <span className="inline-block animate-textReveal delay-100">
+                {t('hero.title').split('').map((char, index) => (
+                  <span 
+                    key={index}
+                    className="inline-block animate-textReveal"
+                    style={{ animationDelay: `${index * 100}ms` }}
+                  >
+                    {char}
+                  </span>
+                ))}
+              </span>
+            </h1>
+            
+            <div className="relative">
+              <p className="text-responsive-lg text-green-500 mb-6 font-bold animate-textReveal delay-500">
+                {t('hero.subtitle')}
+              </p>
+              <div className="absolute -top-2 -right-2 animate-float delay-800">
+                <div className="w-3 h-3 bg-green-400 rounded-full animate-pulse"></div>
+              </div>
+            </div>
+          </div>
           
-          <p className="text-xl md:text-2xl text-green-400 mb-4 animate-fadeInUp animation-delay-300 font-semibold">
-            {t('hero.subtitle')}
-          </p>
-          
-          <p className="text-lg text-gray-300 max-w-3xl mx-auto mb-8 animate-fadeInUp animation-delay-600 leading-relaxed">
+          <p className="text-lg text-gray-600 max-w-4xl mx-auto mb-12 leading-relaxed animate-fadeInUp delay-700">
             {t('hero.description')}
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-fadeInUp animation-delay-900">
+          {/* CTA Buttons */}
+          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-16 animate-fadeInUp delay-900">
             <button 
               onClick={handleGetStarted}
-              className="group bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-white px-8 py-4 rounded-full transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:shadow-green-500/25"
+              className="group bg-black hover:bg-green-500 text-white px-8 py-4 rounded-full transition-all duration-500 transform hover:scale-105 hover:shadow-2xl hover:shadow-green-500/25 magnetic-button font-semibold"
             >
-              <span className="flex items-center gap-2">
+              <span className="flex items-center gap-3">
                 {t('hero.startProject')}
-                <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
+                <ArrowRight size={20} className="group-hover:translate-x-2 transition-transform duration-300" />
               </span>
             </button>
             
             <button 
               onClick={handleWatchDemo}
-              className="group flex items-center gap-2 text-white border-2 border-green-500/50 hover:border-green-400 px-8 py-4 rounded-full transition-all duration-300 hover:bg-green-500/10"
+              className="group flex items-center gap-3 text-black border-2 border-black hover:border-green-500 hover:text-green-500 px-8 py-4 rounded-full transition-all duration-500 hover:bg-green-50 animate-magneticHover font-semibold"
             >
-              <Play size={20} className="group-hover:scale-110 transition-transform" />
+              <Play size={20} className="group-hover:scale-110 transition-transform duration-300" />
               {t('hero.viewWork')}
             </button>
           </div>
 
           {/* Stats Section */}
-          <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-8 animate-fadeInUp animation-delay-1200">
-            <div className="text-center">
-              <div className="text-3xl font-bold text-green-400 mb-2">100+</div>
-              <div className="text-sm text-gray-400">{t('hero.projectsCompleted')}</div>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl font-bold text-green-400 mb-2">50+</div>
-              <div className="text-sm text-gray-400">{t('hero.happyClients')}</div>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl font-bold text-green-400 mb-2">24/7</div>
-              <div className="text-sm text-gray-400">{t('hero.supportAvailable')}</div>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl font-bold text-green-400 mb-2">5★</div>
-              <div className="text-sm text-gray-400">{t('hero.clientRating')}</div>
-            </div>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 animate-fadeInUp delay-1000">
+            {[
+              { number: '100+', label: t('hero.projectsCompleted') },
+              { number: '50+', label: t('hero.happyClients') },
+              { number: '24/7', label: t('hero.supportAvailable') },
+              { number: '5★', label: t('hero.clientRating') }
+            ].map((stat, index) => (
+              <div 
+                key={stat.label}
+                className="text-center group animate-scaleIn"
+                style={{ animationDelay: `${1200 + index * 100}ms` }}
+              >
+                <div className="text-4xl font-black text-green-500 mb-2 group-hover:scale-110 transition-transform duration-300">
+                  {stat.number}
+                </div>
+                <div className="text-sm text-gray-600 font-medium">{stat.label}</div>
+              </div>
+            ))}
           </div>
         </div>
 
         {/* Scroll Indicator */}
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-          <div className="w-6 h-10 border-2 border-green-500/50 rounded-full flex justify-center">
-            <div className="w-1 h-3 bg-green-400 rounded-full mt-2 animate-scroll-indicator"></div>
+        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-float delay-1000">
+          <div className="w-6 h-10 border-2 border-green-500 rounded-full flex justify-center cursor-pointer hover:border-green-600 transition-colors duration-300">
+            <div className="w-1 h-3 bg-green-500 rounded-full mt-2 animate-bounce"></div>
           </div>
         </div>
       </div>

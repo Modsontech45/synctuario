@@ -1,9 +1,28 @@
-import React from 'react';
-import { ExternalLink, Calendar, Users, Shield, DollarSign, GraduationCap, Building2, Cpu, Home } from 'lucide-react';
+import React, { useEffect, useRef } from 'react';
+import { ExternalLink, Calendar, Users, Shield, DollarSign, Cpu, Home } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 
 const Portfolio = () => {
   const { t } = useLanguage();
+  const sectionRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    const elements = sectionRef.current?.querySelectorAll('.fade-in-section');
+    elements?.forEach((el) => observer.observe(el));
+
+    return () => observer.disconnect();
+  }, []);
 
   const projects = [
     {
@@ -14,7 +33,7 @@ const Portfolio = () => {
       link: 'https://rfid-attendance-synctuario-theta.vercel.app',
       technologies: ['React', 'Node.js', 'RFID Integration', 'Real-time Updates'],
       features: t('portfolio.projects.rfidAttendance.features'),
-      icon: <Users size={24} />,
+      icon: <Users size={20} />,
       category: 'Web Application'
     },
     {
@@ -25,7 +44,7 @@ const Portfolio = () => {
       link: 'https://financedemo-phi.vercel.app/login',
       technologies: ['React', 'Node.js', 'MongoDB', 'Chart.js'],
       features: t('portfolio.projects.financeRecord.features'),
-      icon: <DollarSign size={24} />,
+      icon: <DollarSign size={20} />,
       category: 'Web Application'
     },
     {
@@ -36,7 +55,7 @@ const Portfolio = () => {
       link: '#',
       technologies: ['React', 'Node.js', 'MongoDB', 'Chart.js'],
       features: t('portfolio.projects.financialTips.features'),
-      icon: <DollarSign size={24} />,
+      icon: <DollarSign size={20} />,
       category: 'Website'
     },
     {
@@ -47,7 +66,7 @@ const Portfolio = () => {
       link: '#',
       technologies: ['React', 'Next.js', 'Tailwind CSS', 'CMS'],
       features: t('portfolio.projects.relationshipTips.features'),
-      icon: <Users size={24} />,
+      icon: <Users size={20} />,
       category: 'Website'
     },
     {
@@ -58,7 +77,7 @@ const Portfolio = () => {
       link: '#',
       technologies: ['React', 'TypeScript', 'Node.js', 'PostgreSQL'],
       features: t('portfolio.projects.itTips.features'),
-      icon: <Cpu size={24} />,
+      icon: <Cpu size={20} />,
       category: 'Website'
     },
     {
@@ -69,7 +88,7 @@ const Portfolio = () => {
       link: '#',
       technologies: ['IoT', 'Arduino', 'React Native', 'Node.js'],
       features: t('portfolio.projects.smartHome.features'),
-      icon: <Home size={24} />,
+      icon: <Home size={20} />,
       category: 'Hardware + Software'
     }
   ];
@@ -81,13 +100,13 @@ const Portfolio = () => {
   };
 
   return (
-    <section id="portfolio" className="py-20 bg-gradient-to-br from-black via-gray-900 to-black">
+    <section ref={sectionRef} id="portfolio" className="py-24 bg-white section-transition">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-green-400 to-emerald-500 bg-clip-text text-transparent">
+        <div className="text-center mb-20 fade-in-section">
+          <h2 className="text-5xl md:text-6xl font-black mb-6 text-black">
             {t('portfolio.title')}
           </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
             {t('portfolio.subtitle')}
           </p>
         </div>
@@ -97,76 +116,71 @@ const Portfolio = () => {
             <div 
               key={project.id}
               onClick={() => handleProjectClick(project.link)}
-              className={`group relative bg-gray-900/50 backdrop-blur-md rounded-3xl overflow-hidden border border-gray-800 hover:border-green-500/50 transition-all duration-500 transform hover:scale-[1.02] hover:shadow-2xl hover:shadow-green-500/10 ${
+              className={`group relative bg-white rounded-3xl overflow-hidden border border-gray-100 hover:border-green-200 transition-all duration-700 card-hover hover:shadow-2xl fade-in-section ${
                 project.link !== '#' ? 'cursor-pointer' : 'cursor-default'
               }`}
-              style={{
-                animationDelay: `${index * 200}ms`
-              }}
+              style={{ animationDelay: `${index * 200}ms` }}
             >
               {/* Project Image */}
-              <div className="relative h-48 overflow-hidden">
+              <div className="relative h-64 overflow-hidden">
                 <img 
                   src={project.image}
                   alt={project.title}
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
                 
-                {/* Live Project Badge */}
-                {project.link !== '#' && (
-                  <div className="absolute top-4 right-4 bg-green-500 text-white px-3 py-1 rounded-full text-sm font-semibold flex items-center gap-2">
-                    <div className="w-2 h-2 bg-white rounded-full animate-pulse"></div>
+                {/* Status Badges */}
+                {project.link !== '#' ? (
+                  <div className="absolute top-4 right-4 bg-green-500 text-white px-4 py-2 rounded-full text-sm font-semibold flex items-center gap-2 animate-pulse">
+                    <div className="w-2 h-2 bg-white rounded-full"></div>
                     {t('portfolio.liveProject')}
                   </div>
-                )}
-
-                {/* Coming Soon Badge */}
-                {project.link === '#' && (
-                  <div className="absolute top-4 right-4 bg-orange-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                ) : (
+                  <div className="absolute top-4 right-4 bg-orange-500 text-white px-4 py-2 rounded-full text-sm font-semibold">
                     {t('portfolio.comingSoon')}
                   </div>
                 )}
 
                 {/* Category Badge */}
-                <div className="absolute top-4 left-4 bg-black/50 backdrop-blur-md text-white px-3 py-1 rounded-full text-sm flex items-center gap-2">
+                <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-md text-black px-4 py-2 rounded-full text-sm flex items-center gap-2 font-medium">
                   {project.icon}
                   {project.category}
                 </div>
 
                 {/* External Link Icon */}
                 {project.link !== '#' && (
-                  <div className="absolute bottom-4 right-4 p-2 bg-black/50 backdrop-blur-md rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <ExternalLink size={20} className="text-green-400" />
+                  <div className="absolute bottom-4 right-4 p-3 bg-white/90 backdrop-blur-md rounded-full opacity-0 group-hover:opacity-100 transition-all duration-300 transform group-hover:scale-110">
+                    <ExternalLink size={20} className="text-green-500" />
                   </div>
                 )}
               </div>
 
               {/* Project Content */}
-              <div className="p-6">
-                <div className="flex items-center justify-between mb-3">
-                  <h3 className="text-xl font-bold text-white group-hover:text-green-400 transition-colors duration-300">
+              <div className="p-8">
+                <div className="flex items-center justify-between mb-4">
+                  <h3 className="text-2xl font-bold text-black group-hover:text-green-600 transition-colors duration-300">
                     {project.title}
                   </h3>
                   {project.link !== '#' && (
-                    <ExternalLink size={20} className="text-gray-400 group-hover:text-green-400 transition-colors duration-300" />
+                    <ExternalLink size={20} className="text-gray-400 group-hover:text-green-500 transition-colors duration-300" />
                   )}
                 </div>
 
-                <p className="text-gray-300 leading-relaxed mb-4 text-sm">
+                <p className="text-gray-600 leading-relaxed mb-6">
                   {project.description}
                 </p>
 
                 {/* Features */}
-                <div className="mb-4">
-                  <h4 className="text-sm font-semibold text-white mb-2 flex items-center gap-2">
-                    <Shield size={16} className="text-green-400" />
+                <div className="mb-6">
+                  <h4 className="text-sm font-bold text-black mb-3 flex items-center gap-2">
+                    <Shield size={16} className="text-green-500" />
                     {t('portfolio.keyFeatures')}
                   </h4>
-                  <div className="grid grid-cols-1 gap-1">
+                  <div className="space-y-2">
                     {(Array.isArray(project.features) ? project.features : []).slice(0, 2).map((feature, index) => (
-                      <div key={index} className="flex items-center gap-2 text-gray-300 text-xs">
-                        <div className="w-1.5 h-1.5 bg-green-400 rounded-full"></div>
+                      <div key={index} className="flex items-center gap-3 text-gray-600 text-sm">
+                        <div className="w-2 h-2 bg-green-500 rounded-full"></div>
                         {feature}
                       </div>
                     ))}
@@ -174,18 +188,18 @@ const Portfolio = () => {
                 </div>
 
                 {/* Technologies */}
-                <div className="mb-4">
-                  <div className="flex flex-wrap gap-1">
+                <div className="mb-6">
+                  <div className="flex flex-wrap gap-2">
                     {project.technologies.slice(0, 3).map((tech, index) => (
                       <span 
                         key={index}
-                        className="px-2 py-1 bg-green-500/20 text-green-400 rounded-full text-xs border border-green-500/30"
+                        className="px-3 py-1 bg-green-50 text-green-600 rounded-full text-sm border border-green-200 font-medium"
                       >
                         {tech}
                       </span>
                     ))}
                     {project.technologies.length > 3 && (
-                      <span className="px-2 py-1 bg-gray-500/20 text-gray-400 rounded-full text-xs">
+                      <span className="px-3 py-1 bg-gray-100 text-gray-600 rounded-full text-sm">
                         +{project.technologies.length - 3} more
                       </span>
                     )}
@@ -193,45 +207,45 @@ const Portfolio = () => {
                 </div>
 
                 {/* Call to Action */}
-                <div className="flex items-center justify-between pt-3 border-t border-gray-700">
-                  <div className="flex items-center gap-2 text-gray-400">
+                <div className="flex items-center justify-between pt-6 border-t border-gray-100">
+                  <div className="flex items-center gap-2 text-gray-500">
                     <Calendar size={14} />
-                    <span className="text-xs">
+                    <span className="text-sm">
                       {project.link !== '#' ? t('portfolio.liveProject') : t('portfolio.inDevelopment')}
                     </span>
                   </div>
                   {project.link !== '#' ? (
-                    <button className="bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-white px-4 py-1.5 rounded-lg transition-all duration-300 transform group-hover:scale-105 flex items-center gap-2 text-sm">
+                    <button className="bg-green-500 hover:bg-green-600 text-white px-6 py-2 rounded-full transition-all duration-300 transform group-hover:scale-105 flex items-center gap-2 text-sm font-semibold magnetic-button">
                       {t('portfolio.viewLive')}
                       <ExternalLink size={14} />
                     </button>
                   ) : (
-                    <button className="bg-gray-600 text-gray-300 px-4 py-1.5 rounded-lg text-sm cursor-not-allowed">
+                    <button className="bg-gray-200 text-gray-500 px-6 py-2 rounded-full text-sm cursor-not-allowed">
                       {t('portfolio.comingSoon')}
                     </button>
                   )}
                 </div>
               </div>
 
-              {/* Hover Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-r from-green-500/5 to-emerald-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+              {/* Hover Glow Effect */}
+              <div className="absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none glow-green"></div>
             </div>
           ))}
         </div>
 
-        {/* Additional Info */}
-        <div className="mt-12 text-center">
-          <div className="bg-gradient-to-r from-green-900/30 to-emerald-900/30 rounded-2xl p-8 border border-green-500/20">
-            <h3 className="text-2xl font-bold text-white mb-4">{t('portfolio.ctaTitle')}</h3>
-            <p className="text-gray-300 mb-6 max-w-2xl mx-auto">
+        {/* Additional CTA */}
+        <div className="mt-20 text-center fade-in-section">
+          <div className="bg-gradient-to-r from-green-50 to-emerald-50 rounded-3xl p-12 border border-green-100">
+            <h3 className="text-3xl font-bold text-black mb-6">{t('portfolio.ctaTitle')}</h3>
+            <p className="text-gray-600 mb-8 max-w-2xl mx-auto text-lg leading-relaxed">
               {t('portfolio.ctaDesc')}
             </p>
             <button 
               onClick={() => document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' })}
-              className="bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-white px-8 py-3 rounded-full transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-green-500/25 flex items-center gap-2 mx-auto"
+              className="bg-black hover:bg-green-500 text-white px-10 py-4 rounded-full transition-all duration-500 transform hover:scale-105 hover:shadow-xl magnetic-button flex items-center gap-3 mx-auto font-semibold text-lg"
             >
               {t('portfolio.startYourProject')}
-              <ExternalLink size={16} />
+              <ArrowRight size={16} />
             </button>
           </div>
         </div>

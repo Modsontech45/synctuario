@@ -1,10 +1,11 @@
-import React, { useState } from 'react';
-import { Send, Mail, Phone, MapPin } from 'lucide-react';
+import React, { useState, useEffect, useRef } from 'react';
+import { Send, Mail, Phone, MapPin, Clock } from 'lucide-react';
 import emailjs from '@emailjs/browser';
 import { useLanguage } from '../contexts/LanguageContext';
 
 const Contact = () => {
   const { t } = useLanguage();
+  const sectionRef = useRef<HTMLElement>(null);
 
   const [formData, setFormData] = useState({
     name: '',
@@ -16,6 +17,24 @@ const Contact = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
 
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    const elements = sectionRef.current?.querySelectorAll('.fade-in-section');
+    elements?.forEach((el) => observer.observe(el));
+
+    return () => observer.disconnect();
+  }, []);
+
   const services = t('contact.services') as string[];
   const budgetRanges = t('contact.budgetRanges') as string[];
 
@@ -24,14 +43,12 @@ const Contact = () => {
     setIsSubmitting(true);
     
     try {
-      // Template parameters for customer auto-reply
       const templateParams = {
         name: formData.name,
-        email: formData.email,  // This goes to {{email}} field
-        title: formData.service, // This goes to {{title}} in message
+        email: formData.email,
+        title: formData.service,
       };
       
-      // Send auto-reply to customer
       await emailjs.send(
         'service_q3i595l',
         'template_jhtvaaw', 
@@ -39,7 +56,6 @@ const Contact = () => {
         'hu0d0Sfg7GwJKxrIp'
       );
       
-      // Send notification to you (owner)
       const ownerTemplateParams = {
         customer_name: formData.name,
         customer_email: formData.email,
@@ -48,7 +64,6 @@ const Contact = () => {
         customer_message: formData.message,
       };
       
-      // Send to owner
       await emailjs.send(
         'service_q3i595l',
         'template_jzsam48',
@@ -75,162 +90,177 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-20 bg-gradient-to-br from-gray-900 via-black to-gray-900">
+    <section ref={sectionRef} id="contact" className="py-24 bg-white section-transition">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-green-400 to-emerald-500 bg-clip-text text-transparent">
+        <div className="text-center mb-20 fade-in-section">
+          <h2 className="text-5xl md:text-6xl font-black mb-6 text-black">
             {t('contact.title')}
           </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
             {t('contact.subtitle')}
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
-          <div>
-            <h3 className="text-2xl font-bold text-white mb-8">{t('contact.contactInfo')}</h3>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-20">
+          {/* Contact Info */}
+          <div className="fade-in-section">
+            <h3 className="text-3xl font-bold text-black mb-12">{t('contact.contactInfo')}</h3>
             
-            <div className="space-y-6">
-              <div className="flex items-center space-x-4 group">
-                <div className="p-3 bg-gradient-to-r from-green-500 to-emerald-500 rounded-lg group-hover:scale-110 transition-transform duration-300">
-                  <Mail size={24} />
+            <div className="space-y-8">
+              {[
+                {
+                  icon: <Mail size={24} />,
+                  label: t('contact.emailUs'),
+                  value: 'tandemodson55@gmail.com',
+                  gradient: 'from-blue-500 to-cyan-500'
+                },
+                {
+                  icon: <Phone size={24} />,
+                  label: t('contact.callUs'),
+                  value: '+233 24 291 1248',
+                  gradient: 'from-green-500 to-emerald-500'
+                },
+                {
+                  icon: <MapPin size={24} />,
+                  label: t('contact.location'),
+                  value: 'Accra, Ghana',
+                  gradient: 'from-purple-500 to-pink-500'
+                }
+              ].map((contact, index) => (
+                <div 
+                  key={contact.label}
+                  className="flex items-center space-x-6 group animate-slideInLeft"
+                  style={{ animationDelay: `${index * 200}ms` }}
+                >
+                  <div className={`p-4 bg-gradient-to-r ${contact.gradient} text-white rounded-2xl group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 shadow-lg`}>
+                    {contact.icon}
+                  </div>
+                  <div>
+                    <p className="text-gray-500 font-medium">{contact.label}</p>
+                    <p className="text-black font-bold text-lg">{contact.value}</p>
+                  </div>
                 </div>
-                <div>
-                  <p className="text-gray-400">{t('contact.emailUs')}</p>
-                  <p className="text-white font-semibold">tandemodson55@gmail.com</p>
-                </div>
-              </div>
-
-              <div className="flex items-center space-x-4 group">
-                <div className="p-3 bg-gradient-to-r from-emerald-500 to-teal-500 rounded-lg group-hover:scale-110 transition-transform duration-300">
-                  <Phone size={24} />
-                </div>
-                <div>
-                  <p className="text-gray-400">{t('contact.callUs')}</p>
-                  <p className="text-white font-semibold">+233 24 291 1248</p>
-                </div>
-              </div>
-
-              <div className="flex items-center space-x-4 group">
-                <div className="p-3 bg-gradient-to-r from-teal-500 to-cyan-500 rounded-lg group-hover:scale-110 transition-transform duration-300">
-                  <MapPin size={24} />
-                </div>
-                <div>
-                  <p className="text-gray-400">{t('contact.location')}</p>
-                  <p className="text-white font-semibold">Accra, Ghana</p>
-                </div>
-              </div>
+              ))}
             </div>
 
-            <div className="mt-12 p-6 bg-gradient-to-r from-green-900/30 to-emerald-900/30 rounded-2xl border border-green-500/30">
-              <h4 className="text-lg font-semibold text-white mb-4">{t('contact.businessHours')}</h4>
-              <div className="space-y-2 text-gray-300">
-                <div className="flex justify-between">
-                  <span>{t('contact.mondayFriday')}</span>
-                  <span>9:00 AM - 6:00 PM</span>
+            {/* Business Hours */}
+            <div className="mt-12 p-8 bg-gray-50 rounded-3xl border border-gray-100 hover:border-green-200 transition-all duration-500 fade-in-section">
+              <h4 className="text-xl font-bold text-black mb-6 flex items-center gap-3">
+                <Clock size={24} className="text-green-500" />
+                {t('contact.businessHours')}
+              </h4>
+              <div className="space-y-3 text-gray-600">
+                <div className="flex justify-between items-center">
+                  <span className="font-medium">{t('contact.mondayFriday')}</span>
+                  <span className="font-bold">9:00 AM - 6:00 PM</span>
                 </div>
-                <div className="flex justify-between">
-                  <span>{t('contact.saturday')}</span>
-                  <span>10:00 AM - 2:00 PM</span>
+                <div className="flex justify-between items-center">
+                  <span className="font-medium">{t('contact.saturday')}</span>
+                  <span className="font-bold">10:00 AM - 2:00 PM</span>
                 </div>
-                <div className="flex justify-between">
-                  <span>{t('contact.sunday')}</span>
-                  <span>{t('contact.emergencySupport')}</span>
+                <div className="flex justify-between items-center">
+                  <span className="font-medium">{t('contact.sunday')}</span>
+                  <span className="font-bold text-green-600">{t('contact.emergencySupport')}</span>
                 </div>
               </div>
-              <div className="mt-4 pt-4 border-t border-green-500/20">
-                <p className="text-sm text-gray-400">
-                  <span className="text-green-400 font-semibold">24/7 Emergency Support</span> {t('contact.emergencyAvailable')}
+              <div className="mt-6 pt-6 border-t border-gray-200">
+                <p className="text-sm text-gray-500">
+                  <span className="text-green-600 font-bold">24/7 Emergency Support</span> {t('contact.emergencyAvailable')}
                 </p>
               </div>
             </div>
           </div>
 
-          <div className="bg-gray-900/50 backdrop-blur-md rounded-2xl p-8 border border-green-500/30">
+          {/* Contact Form */}
+          <div className="bg-white rounded-3xl p-10 border border-gray-100 shadow-xl hover:shadow-2xl transition-all duration-700 card-hover fade-in-section">
             {submitStatus === 'success' && (
-              <div className="mb-6 p-4 bg-green-900/50 border border-green-500/50 rounded-lg">
-                <p className="text-green-400 font-semibold">{t('contact.successMessage')}</p>
+              <div className="mb-8 p-6 bg-green-50 border border-green-200 rounded-2xl animate-scaleIn">
+                <p className="text-green-600 font-semibold text-center">{t('contact.successMessage')}</p>
               </div>
             )}
             
             {submitStatus === 'error' && (
-              <div className="mb-6 p-4 bg-red-900/50 border border-red-500/50 rounded-lg">
-                <p className="text-red-400 font-semibold">{t('contact.errorMessage')}</p>
+              <div className="mb-8 p-6 bg-red-50 border border-red-200 rounded-2xl animate-scaleIn">
+                <p className="text-red-600 font-semibold text-center">{t('contact.errorMessage')}</p>
               </div>
             )}
 
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div>
-                <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-2">
-                  {t('contact.yourName')}
-                </label>
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  value={formData.name}
-                  onChange={handleChange}
-                  required
-                  className="w-full px-4 py-3 bg-black border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500 transition-all duration-300"
-                  placeholder={t('contact.enterName')}
-                />
+            <form onSubmit={handleSubmit} className="space-y-8">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                  <label htmlFor="name" className="block text-sm font-bold text-black mb-3">
+                    {t('contact.yourName')}
+                  </label>
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    value={formData.name}
+                    onChange={handleChange}
+                    required
+                    className="w-full px-6 py-4 bg-gray-50 border border-gray-200 rounded-2xl text-black placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500 transition-all duration-300 hover:border-green-300"
+                    placeholder={t('contact.enterName')}
+                  />
+                </div>
+
+                <div>
+                  <label htmlFor="email" className="block text-sm font-bold text-black mb-3">
+                    {t('contact.emailAddress')}
+                  </label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    required
+                    className="w-full px-6 py-4 bg-gray-50 border border-gray-200 rounded-2xl text-black placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500 transition-all duration-300 hover:border-green-300"
+                    placeholder="your@email.com"
+                  />
+                </div>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                  <label htmlFor="service" className="block text-sm font-bold text-black mb-3">
+                    {t('contact.serviceInterested')}
+                  </label>
+                  <select
+                    id="service"
+                    name="service"
+                    value={formData.service}
+                    onChange={handleChange}
+                    required
+                    className="w-full px-6 py-4 bg-gray-50 border border-gray-200 rounded-2xl text-black focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500 transition-all duration-300 hover:border-green-300"
+                  >
+                    <option value="">{t('contact.selectService')}</option>
+                    {services.map(service => (
+                      <option key={service} value={service}>{service}</option>
+                    ))}
+                  </select>
+                </div>
+
+                <div>
+                  <label htmlFor="budget" className="block text-sm font-bold text-black mb-3">
+                    {t('contact.projectBudget')}
+                  </label>
+                  <select
+                    id="budget"
+                    name="budget"
+                    value={formData.budget}
+                    onChange={handleChange}
+                    className="w-full px-6 py-4 bg-gray-50 border border-gray-200 rounded-2xl text-black focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500 transition-all duration-300 hover:border-green-300"
+                  >
+                    <option value="">{t('contact.selectBudget')}</option>
+                    {budgetRanges.map(range => (
+                      <option key={range} value={range}>{range}</option>
+                    ))}
+                  </select>
+                </div>
               </div>
 
               <div>
-                <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-2">
-                  {t('contact.emailAddress')}
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  required
-                  className="w-full px-4 py-3 bg-black border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500 transition-all duration-300"
-                  placeholder="your@email.com"
-                />
-              </div>
-
-              <div>
-                <label htmlFor="service" className="block text-sm font-medium text-gray-300 mb-2">
-                  {t('contact.serviceInterested')}
-                </label>
-                <select
-                  id="service"
-                  name="service"
-                  value={formData.service}
-                  onChange={handleChange}
-                  required
-                  className="w-full px-4 py-3 bg-black border border-gray-700 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500 transition-all duration-300"
-                >
-                  <option value="">{t('contact.selectService')}</option>
-                  {services.map(service => (
-                    <option key={service} value={service}>{service}</option>
-                  ))}
-                </select>
-              </div>
-
-              <div>
-                <label htmlFor="budget" className="block text-sm font-medium text-gray-300 mb-2">
-                  {t('contact.projectBudget')}
-                </label>
-                <select
-                  id="budget"
-                  name="budget"
-                  value={formData.budget}
-                  onChange={handleChange}
-                  className="w-full px-4 py-3 bg-black border border-gray-700 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500 transition-all duration-300"
-                >
-                  <option value="">{t('contact.selectBudget')}</option>
-                  {budgetRanges.map(range => (
-                    <option key={range} value={range}>{range}</option>
-                  ))}
-                </select>
-              </div>
-
-              <div>
-                <label htmlFor="message" className="block text-sm font-medium text-gray-300 mb-2">
+                <label htmlFor="message" className="block text-sm font-bold text-black mb-3">
                   {t('contact.message')}
                 </label>
                 <textarea
@@ -239,8 +269,8 @@ const Contact = () => {
                   value={formData.message}
                   onChange={handleChange}
                   required
-                  rows={5}
-                  className="w-full px-4 py-3 bg-black border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500 transition-all duration-300 resize-none"
+                  rows={6}
+                  className="w-full px-6 py-4 bg-gray-50 border border-gray-200 rounded-2xl text-black placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500 transition-all duration-300 resize-none hover:border-green-300"
                   placeholder={t('contact.messagePlaceholder')}
                 />
               </div>
@@ -248,11 +278,11 @@ const Contact = () => {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 disabled:from-gray-600 disabled:to-gray-700 text-white px-8 py-4 rounded-lg transition-all duration-300 transform hover:scale-[1.02] hover:shadow-2xl hover:shadow-green-500/25 flex items-center justify-center gap-2 font-semibold disabled:cursor-not-allowed"
+                className="w-full bg-black hover:bg-green-500 disabled:bg-gray-400 text-white px-8 py-5 rounded-2xl transition-all duration-500 transform hover:scale-[1.02] hover:shadow-xl magnetic-button flex items-center justify-center gap-3 font-bold text-lg disabled:cursor-not-allowed"
               >
                 {isSubmitting ? (
                   <>
-                    <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white"></div>
+                    <div className="animate-spin rounded-full h-6 w-6 border-b-2 border-white"></div>
                     {t('contact.sending')}
                   </>
                 ) : (
@@ -263,7 +293,7 @@ const Contact = () => {
                 )}
               </button>
               
-              <p className="text-center text-sm text-gray-400">
+              <p className="text-center text-sm text-gray-500 font-medium">
                 {t('contact.responseTime')}
               </p>
             </form>
