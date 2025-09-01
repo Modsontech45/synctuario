@@ -120,17 +120,25 @@
           "Create and manage boards",
           "Task organization & tracking",
           "Team collaboration & invites",
+          "Real-time synchronization"
         ]
+      },
+      "boardManager": {
+        "title": "Board & Task Management System",
+        "description": "A collaborative project management platform that enables teams to create boards, organize tasks, and invite team members for seamless collaboration. Features real-time updates, drag-and-drop functionality, and comprehensive project tracking capabilities.",
+        "features": [
+          "Create and manage boards",
+      },
+      "taskflow": {
+        "title": "TaskFlow - Système de Gestion de Tableaux et Tâches",
+        "description": "Une plateforme de gestion de projet collaborative qui permet aux équipes de créer des tableaux, d'organiser des tâches et d'inviter des membres d'équipe pour une collaboration fluide. Comprend des mises à jour en temps réel, une fonctionnalité de glisser-déposer et des capacités de suivi de projet complètes.",
+        "features": [
+          "Créer et gérer des tableaux",
           "Organisation et suivi des tâches",
           "Collaboration d'équipe et invitations",
           "Synchronisation en temps réel"
         ]
       }
-    }
-  },
-  "about": {
-    "title": "Why Choose Synctuario?",
-    "description": "At Synctuario, we bridge the gap between innovative technology and practical business solutions. Our multidisciplinary approach combines proven affiliate marketing strategies, custom software development, cutting-edge hardware design, and authentic social media growth techniques.",
     "strategicApproach": "Strategic Approach",
     "strategicDesc": "Every project begins with understanding your unique goals and challenges.",
     "rapidExecution": "Rapid Execution",

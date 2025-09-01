@@ -1,212 +1,195 @@
-{
-  "nav": {
-    "home": "Home",
-    "services": "Services",
-    "portfolio": "Portfolio",
-    "about": "About",
-    "contact": "Contact"
-  },
-  "hero": {
-    "title": "SYNCTUARIO",
-    "subtitle": "Digital Innovation & Growth Solutions",
-    "description": "We transform businesses through cutting-edge affiliate marketing strategies, custom web applications that solve real problems, innovative hardware design solutions, and strategic social media growth that builds authentic communities.",
-    "startProject": "Start Your Project",
-    "viewWork": "View Our Work",
-    "projectsCompleted": "Projects Completed",
-    "happyClients": "Happy Clients",
-    "supportAvailable": "Support Available",
-    "clientRating": "Client Rating"
-  },
-  "services": {
-    "title": "Our Services",
-    "subtitle": "Comprehensive digital solutions tailored to accelerate your business growth and maximize your online presence",
-    "affiliateMarketing": "Affiliate Marketing",
-    "affiliateDesc": "Strategic affiliate marketing campaigns that drive revenue and maximize ROI through data-driven approaches.",
-    "webDevelopment": "Web App Development",
-    "webDesc": "Custom web applications built to solve real problems with modern technologies and seamless user experiences.",
-    "hardwareDesign": "Hardware Design",
-    "hardwareDesc": "Innovative hardware solutions designed from concept to production, bridging digital and physical worlds.",
-    "socialMedia": "Social Media Growth",
-    "socialDesc": "Comprehensive social media strategies that build authentic communities and accelerate brand growth.",
-    "learnMore": "Learn More",
-    "ctaTitle": "Ready to Transform Your Business?",
-    "ctaDesc": "Let's discuss how our expertise can help you achieve your goals and take your business to the next level.",
-    "freeConsultation": "Get Free Consultation"
-  },
-  "portfolio": {
-    "title": "Our Portfolio",
-    "subtitle": "Showcasing our expertise in building innovative solutions that solve real-world problems",
-    "liveProject": "Live Project",
-    "comingSoon": "Coming Soon",
-    "keyFeatures": "Key Features",
-    "viewLive": "View Live",
-    "inDevelopment": "In Development",
-    "ctaTitle": "Ready to Start Your Project?",
-    "ctaDesc": "From web applications to corporate websites, we deliver solutions that drive results. Let's discuss how we can bring your vision to life.",
-    "startYourProject": "Start Your Project",
-    "projects": {
-      "rfidAttendance": {
-        "title": "RFID Attendance System",
-        "description": "A comprehensive RFID-based attendance tracking system built with modern web technologies. Uses ID card scanning for seamless attendance tracking with real-time monitoring, user management, and detailed reporting capabilities.",
-        "features": [
-          "Real-time attendance tracking",
-          "User management system",
-          "Detailed reporting dashboard",
-          "ID card scanning integration"
-        ]
-      },
-      "financeRecord": {
-        "title": "Finance Record Web App",
-        "description": "A comprehensive financial management system for tracking income, expenses, budgets, and generating detailed financial reports. Features secure user authentication, data visualization, and multi-currency support.",
-        "features": [
-          "Income & expense tracking",
-          "Budget management",
-          "Financial reports & analytics",
-          "Multi-currency support"
-        ]
-      },
-      "financialTips": {
-        "title": "Financial Tips & Healthy Life Website",
-        "description": "A comprehensive wellness platform combining financial literacy with health and lifestyle guidance. Features budgeting tools, investment tips, fitness tracking, nutrition guides, and mental health resources.",
-        "features": [
-          "Financial planning tools",
-          "Health & fitness tracking",
-          "Investment calculators",
-          "Wellness content library"
-        ]
-      },
-      "relationshipTips": {
-        "title": "Relationship & Content Creation Tips",
-        "description": "A dynamic platform offering relationship advice, dating tips, and comprehensive content creation guides. Features interactive tools for social media growth, video editing tutorials, and relationship coaching resources.",
-        "features": [
-          "Relationship advice articles",
-          "Content creation tutorials",
-          "Social media templates",
-          "Interactive coaching tools"
-        ]
-      },
-      "itTips": {
-        "title": "IT Tips & Technology Hub",
-        "description": "A comprehensive technology resource platform featuring programming tutorials, software reviews, cybersecurity tips, and the latest tech trends. Includes code snippets, troubleshooting guides, and career advice for IT professionals.",
-        "features": [
-          "Programming tutorials",
-          "Tech news & reviews",
-          "Cybersecurity guides",
-          "Career development tips"
-        ]
-      },
-      "smartHome": {
-        "title": "Smart Home Automation System",
-        "description": "An intelligent IoT-based home automation system that allows users to control lighting, temperature, security, and appliances remotely. Features voice control integration, energy monitoring, automated scheduling, and mobile app connectivity.",
-        "features": [
-          "Remote device control",
-          "Voice assistant integration",
-          "Energy usage monitoring",
-          "Automated scheduling"
-        ]
-      },
-      "boardManager": {
-        "title": "Board & Task Management System",
-        "description": "A collaborative project management platform that enables teams to create boards, organize tasks, and invite team members for seamless collaboration. Features real-time updates, drag-and-drop functionality, and comprehensive project tracking capabilities.",
-        "features": [
-          "Create and manage boards",
-          "Task organization & tracking",
-          "Team collaboration & invites",
-        ]
-      },
-      "boardManager": {
-        "title": "Board & Task Management System",
-        "description": "A collaborative project management platform that enables teams to create boards, organize tasks, and invite team members for seamless collaboration. Features real-time updates, drag-and-drop functionality, and comprehensive project tracking capabilities.",
-        "features": [
-          "Create and manage boards",
-          "Task organization & tracking",
-          "Team collaboration & invites",
-        ]
-      }
-      category: 'Web Application'
+import React from 'react';
+import { useLanguage } from '../contexts/LanguageContext';
+import { ExternalLink, Kanban, DollarSign, Globe, Heart, Code, Home, Zap } from 'lucide-react';
+
+const Portfolio: React.FC = () => {
+  const { t } = useLanguage();
+
+  const projects = [
+    {
+      id: 'rfidAttendance',
+      icon: <Zap className="w-8 h-8" />,
+      image: 'https://images.pexels.com/photos/159711/books-bookstore-book-reading-159711.jpeg?auto=compress&cs=tinysrgb&w=800',
+      category: 'Hardware & Web',
+      status: 'live',
+      url: '#'
+    },
+    {
+      id: 'financeRecord',
+      icon: <DollarSign className="w-8 h-8" />,
+      image: 'https://images.pexels.com/photos/590022/pexels-photo-590022.jpeg?auto=compress&cs=tinysrgb&w=800',
+      category: 'Web Application',
+      status: 'development',
+      url: '#'
+    },
+    {
+      id: 'financialTips',
+      icon: <Heart className="w-8 h-8" />,
+      image: 'https://images.pexels.com/photos/3760067/pexels-photo-3760067.jpeg?auto=compress&cs=tinysrgb&w=800',
+      category: 'Website',
+      status: 'development',
+      url: '#'
+    },
+    {
+      id: 'relationshipTips',
+      icon: <Heart className="w-8 h-8" />,
+      image: 'https://images.pexels.com/photos/1181467/pexels-photo-1181467.jpeg?auto=compress&cs=tinysrgb&w=800',
+      category: 'Website',
+      status: 'development',
+      url: '#'
+    },
+    {
+      id: 'itTips',
+      icon: <Code className="w-8 h-8" />,
+      image: 'https://images.pexels.com/photos/546819/pexels-photo-546819.jpeg?auto=compress&cs=tinysrgb&w=800',
+      category: 'Website',
+      status: 'development',
+      url: '#'
+    },
+    {
+      id: 'smartHome',
+      icon: <Home className="w-8 h-8" />,
+      image: 'https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&w=800',
+      category: 'IoT & Hardware',
+      status: 'development',
+      url: '#'
+    },
+    {
+      id: 'taskflow',
+      icon: <Kanban className="w-8 h-8" />,
+      image: 'https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=800',
+      category: 'Web Application',
+      status: 'live',
+      url: 'https://taskflow-nine-henna.vercel.app/'
     }
-  },
-  "about": {
-    "title": "Why Choose Synctuario?",
-    "description": "At Synctuario, we bridge the gap between innovative technology and practical business solutions. Our multidisciplinary approach combines proven affiliate marketing strategies, custom software development, cutting-edge hardware design, and authentic social media growth techniques.",
-    "strategicApproach": "Strategic Approach",
-    "strategicDesc": "Every project begins with understanding your unique goals and challenges.",
-    "rapidExecution": "Rapid Execution",
-    "rapidDesc": "Fast turnaround times without compromising on quality or attention to detail.",
-    "provenResults": "Proven Results",
-    "provenDesc": "Track record of delivering measurable outcomes across all service areas.",
-    "expertiseIncludes": "Our Expertise Includes:",
-    "performanceMarketing": "Performance Marketing & Conversion Optimization",
-    "webApplications": "React, Node.js, Python Web Applications",
-    "iotDevices": "IoT Devices & Custom Electronics",
-    "socialGrowth": "Instagram, TikTok, YouTube Growth Strategies",
-    "mission": "Our Mission",
-    "missionDesc": "To empower businesses and entrepreneurs with innovative digital solutions that drive sustainable growth, enhance user experiences, and create lasting competitive advantages in today's rapidly evolving digital landscape.",
-    "projectsCompleted": "Projects Completed",
-    "clientSatisfaction": "Client Satisfaction",
-    "support": "Support",
-    "yearsExperience": "Years Experience"
-  },
-  "contact": {
-    "title": "Get In Touch",
-    "subtitle": "Ready to transform your business? Let's discuss how we can help you achieve your goals and accelerate your growth.",
-    "contactInfo": "Contact Information",
-    "emailUs": "Email Us",
-    "callUs": "Call Us",
-    "location": "Location",
-    "businessHours": "Business Hours",
-    "mondayFriday": "Monday - Friday",
-    "saturday": "Saturday",
-    "sunday": "Sunday",
-    "emergencySupport": "Emergency Support Only",
-    "emergencyAvailable": "24/7 Emergency Support available for critical issues",
-    "yourName": "Your Name",
-    "enterName": "Enter your full name",
-    "emailAddress": "Email Address",
-    "serviceInterested": "Service Interested In",
-    "selectService": "Select a service",
-    "projectBudget": "Project Budget (Optional)",
-    "selectBudget": "Select budget range",
-    "message": "Message",
-    "messagePlaceholder": "Tell us about your project, goals, and how we can help you succeed...",
-    "sendMessage": "Send Message",
-    "sending": "Sending...",
-    "responseTime": "We typically respond within 2-4 hours during business hours",
-    "successMessage": "✓ Message sent successfully! We'll get back to you within 24 hours.",
-    "errorMessage": "✗ Something went wrong. Please try again or contact us directly.",
-    "services": [
-      "Affiliate Marketing",
-      "Web App Development",
-      "Hardware Design",
-      "Social Media Growth",
-      "SEO & Digital Marketing",
-      "E-commerce Solutions",
-      "Custom Solution",
-      "Consultation Only"
-    ],
-    "budgetRanges": [
-      "$1,000 - $5,000",
-      "$5,000 - $15,000",
-      "$15,000 - $50,000",
-      "$50,000+",
-      "Let's Discuss"
-    ]
-  },
-  "footer": {
-    "description": "Transforming businesses through innovative digital solutions, cutting-edge technology, and strategic growth strategies that deliver measurable results.",
-    "services": "Services",
-    "quickLinks": "Quick Links",
-    "allRightsReserved": "All rights reserved.",
-    "madeWith": "Made with",
-    "byTeam": "by Synctuario Team",
-    "privacyPolicy": "Privacy Policy",
-    "termsOfService": "Terms of Service",
-    "servicesList": [
-      "Affiliate Marketing",
-      "Web Development",
-      "Hardware Design",
-      "Social Media Growth",
-      "SEO & Digital Marketing"
-    ]
-  }
-}
+  ];
+
+  return (
+    <div className="min-h-screen bg-white">
+      {/* Portfolio Header */}
+      <section className="pt-32 pb-20 bg-gradient-to-br from-gray-50 to-green-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6 tracking-tight">
+            {t('portfolio.title')}
+          </h1>
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+            {t('portfolio.subtitle')}
+          </p>
+        </div>
+      </section>
+
+      {/* Projects Grid */}
+      <section className="py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {projects.map((project) => (
+              <div
+                key={project.id}
+                className="group bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden border border-gray-100 hover:border-green-200"
+              >
+                {/* Project Image */}
+                <div className="relative overflow-hidden">
+                  <img
+                    src={project.image}
+                    alt={t(`portfolio.projects.${project.id}.title`)}
+                    className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-700"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  
+                  {/* Status Badge */}
+                  <div className="absolute top-4 right-4">
+                    <span className={`px-3 py-1 rounded-full text-xs font-semibold ${
+                      project.status === 'live' 
+                        ? 'bg-green-100 text-green-800' 
+                        : 'bg-yellow-100 text-yellow-800'
+                    }`}>
+                      {project.status === 'live' ? t('portfolio.liveProject') : t('portfolio.comingSoon')}
+                    </span>
+                  </div>
+
+                  {/* Category Badge */}
+                  <div className="absolute top-4 left-4">
+                    <span className="px-3 py-1 rounded-full text-xs font-semibold bg-white/90 text-gray-700">
+                      {project.category}
+                    </span>
+                  </div>
+                </div>
+
+                {/* Project Content */}
+                <div className="p-6">
+                  <div className="flex items-center mb-3">
+                    <div className="text-green-600 mr-3">
+                      {project.icon}
+                    </div>
+                    <h3 className="text-xl font-bold text-gray-900">
+                      {t(`portfolio.projects.${project.id}.title`)}
+                    </h3>
+                  </div>
+                  
+                  <p className="text-gray-600 mb-4 leading-relaxed">
+                    {t(`portfolio.projects.${project.id}.description`)}
+                  </p>
+
+                  {/* Key Features */}
+                  <div className="mb-6">
+                    <h4 className="text-sm font-semibold text-gray-900 mb-2">
+                      {t('portfolio.keyFeatures')}:
+                    </h4>
+                    <ul className="space-y-1">
+                      {t(`portfolio.projects.${project.id}.features`).map((feature: string, index: number) => (
+                        <li key={index} className="text-sm text-gray-600 flex items-center">
+                          <div className="w-1.5 h-1.5 bg-green-500 rounded-full mr-2" />
+                          {feature}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  {/* Action Button */}
+                  <div className="flex justify-center">
+                    {project.status === 'live' ? (
+                      <a
+                        href={project.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center px-6 py-3 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors duration-300 font-semibold group"
+                      >
+                        {t('portfolio.viewLive')}
+                        <ExternalLink className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
+                      </a>
+                    ) : (
+                      <span className="inline-flex items-center px-6 py-3 bg-gray-100 text-gray-600 rounded-lg font-semibold">
+                        {t('portfolio.inDevelopment')}
+                      </span>
+                    )}
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-20 bg-gradient-to-r from-green-600 to-green-700">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+            {t('portfolio.ctaTitle')}
+          </h2>
+          <p className="text-xl text-green-100 mb-8 leading-relaxed">
+            {t('portfolio.ctaDesc')}
+          </p>
+          <a
+            href="/contact"
+            className="inline-flex items-center px-8 py-4 bg-white text-green-600 rounded-lg hover:bg-gray-50 transition-colors duration-300 font-semibold text-lg group"
+          >
+            {t('portfolio.startYourProject')}
+            <ExternalLink className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
+          </a>
+        </div>
+      </section>
+    </div>
+  );
+};
+
+export default Portfolio;
