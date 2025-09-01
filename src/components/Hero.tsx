@@ -78,13 +78,13 @@ const Hero = () => {
               </span>
             </Link>
             
-            <button 
-              onClick={handleWatchDemo}
+            <Link 
+              to="/portfolio"
               className="group flex items-center gap-3 text-black border-2 border-black hover:border-green-500 hover:text-green-500 px-8 py-4 rounded-full transition-all duration-500 hover:bg-green-50 animate-magneticHover font-semibold"
             >
               <Play size={20} className="group-hover:scale-110 transition-transform duration-300" />
               {t('hero.viewWork')}
-            </button>
+            </Link>
           </div>
 
           {/* Stats Section */}
