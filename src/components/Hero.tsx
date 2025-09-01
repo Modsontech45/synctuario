@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { ArrowRight, Play, Sparkles } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { useLanguage } from '../contexts/LanguageContext';
 
 const Hero = () => {
@@ -10,16 +11,12 @@ const Hero = () => {
     setIsVisible(true);
   }, []);
 
-  const handleGetStarted = () => {
-    document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' });
-  };
-
   const handleWatchDemo = () => {
     alert('Demo coming soon! Contact us for a personalized demonstration of our services.');
   };
 
   return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center bg-white overflow-hidden">
+    <section className="relative min-h-screen flex items-center justify-center bg-white overflow-hidden">
       {/* Animated Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-20 left-10 w-32 h-32 bg-green-100 rounded-full animate-float delay-100 opacity-60"></div>
@@ -71,15 +68,15 @@ const Hero = () => {
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-16 animate-fadeInUp delay-900">
-            <button 
-              onClick={handleGetStarted}
+            <Link 
+              to="/contact"
               className="group bg-black hover:bg-green-500 text-white px-8 py-4 rounded-full transition-all duration-500 transform hover:scale-105 hover:shadow-2xl hover:shadow-green-500/25 magnetic-button font-semibold"
             >
               <span className="flex items-center gap-3">
                 {t('hero.startProject')}
                 <ArrowRight size={20} className="group-hover:translate-x-2 transition-transform duration-300" />
               </span>
-            </button>
+            </Link>
             
             <button 
               onClick={handleWatchDemo}

@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import { ExternalLink, Calendar, Users, Shield, DollarSign, Cpu, Home, ArrowRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { useLanguage } from '../contexts/LanguageContext';
 
 const Portfolio = () => {
@@ -100,12 +101,12 @@ const Portfolio = () => {
   };
 
   return (
-    <section ref={sectionRef} id="portfolio" className="py-24 bg-white section-transition">
+    <section ref={sectionRef} className="py-24 bg-white section-transition min-h-screen">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-20 fade-in-section">
-          <h2 className="text-5xl md:text-6xl font-black mb-6 text-black">
+          <h1 className="text-5xl md:text-6xl font-black mb-6 text-black">
             {t('portfolio.title')}
-          </h2>
+          </h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
             {t('portfolio.subtitle')}
           </p>
@@ -240,13 +241,13 @@ const Portfolio = () => {
             <p className="text-gray-600 mb-8 max-w-2xl mx-auto text-lg leading-relaxed">
               {t('portfolio.ctaDesc')}
             </p>
-            <button 
-              onClick={() => document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' })}
-              className="bg-black hover:bg-green-500 text-white px-10 py-4 rounded-full transition-all duration-500 transform hover:scale-105 hover:shadow-xl magnetic-button flex items-center gap-3 mx-auto font-semibold text-lg"
+            <Link 
+              to="/contact"
+              className="inline-block bg-black hover:bg-green-500 text-white px-10 py-4 rounded-full transition-all duration-500 transform hover:scale-105 hover:shadow-xl magnetic-button flex items-center gap-3 mx-auto font-semibold text-lg"
             >
               {t('portfolio.startYourProject')}
               <ArrowRight size={16} />
-            </button>
+            </Link>
           </div>
         </div>
       </div>

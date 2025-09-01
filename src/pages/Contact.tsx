@@ -90,12 +90,12 @@ const Contact = () => {
   };
 
   return (
-    <section ref={sectionRef} id="contact" className="py-24 bg-white section-transition">
+    <section ref={sectionRef} className="py-24 bg-white section-transition min-h-screen">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-20 fade-in-section">
-          <h2 className="text-5xl md:text-6xl font-black mb-6 text-black">
+          <h1 className="text-5xl md:text-6xl font-black mb-6 text-black">
             {t('contact.title')}
-          </h2>
+          </h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
             {t('contact.subtitle')}
           </p>

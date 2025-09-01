@@ -43,14 +43,14 @@ const About = () => {
   ];
 
   return (
-    <section ref={sectionRef} id="about" className="py-24 bg-gray-50 section-transition">
+    <section ref={sectionRef} className="py-24 bg-gray-50 section-transition min-h-screen">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
           {/* Left Content */}
           <div className="fade-in-section">
-            <h2 className="text-5xl md:text-6xl font-black mb-8 text-black">
+            <h1 className="text-5xl md:text-6xl font-black mb-8 text-black">
               {t('about.title')}
-            </h2>
+            </h1>
             
             <p className="text-xl text-gray-600 mb-12 leading-relaxed">
               {t('about.description')}
@@ -134,7 +134,7 @@ const About = () => {
         </div>
 
         {/* Personal Story Section */}
-        <div className="lg:col-span-2 mt-20 fade-in-section">
+        <div className="mt-20 fade-in-section">
           <div className="bg-gradient-to-r from-gray-50 to-green-50 rounded-3xl p-12 border border-gray-100 shadow-xl hover:shadow-2xl transition-all duration-700">
             <div className="max-w-4xl mx-auto">
               <h3 className="text-3xl font-bold text-black mb-8 text-center">Meet Modson</h3>

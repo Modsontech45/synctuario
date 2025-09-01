@@ -1,5 +1,6 @@
 import React from 'react';
 import { Heart, ArrowUp } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { useLanguage } from '../contexts/LanguageContext';
 
 const Footer = () => {
@@ -16,9 +17,9 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
           {/* Brand Section */}
           <div className="col-span-1 md:col-span-2">
-            <div className="text-4xl font-black text-gradient-green mb-6 animate-glowPulse">
+            <Link to="/" className="text-4xl font-black text-gradient-green mb-6 animate-glowPulse inline-block">
               Synctuario
-            </div>
+            </Link>
             <p className="text-gray-600 max-w-md leading-relaxed mb-8 text-lg">
               {t('footer.description')}
             </p>
@@ -56,23 +57,19 @@ const Footer = () => {
             <h4 className="text-black font-bold mb-6 text-lg">{t('footer.quickLinks')}</h4>
             <ul className="space-y-3 text-gray-600">
               {[
-                { name: t('nav.home'), href: '#home' },
-                { name: t('nav.services'), href: '#services' },
-                { name: t('nav.portfolio'), href: '#portfolio' },
-                { name: t('nav.about'), href: '#about' },
-                { name: t('nav.contact'), href: '#contact' }
+                { name: t('nav.home'), href: '/' },
+                { name: t('nav.services'), href: '/services' },
+                { name: t('nav.portfolio'), href: '/portfolio' },
+                { name: t('nav.about'), href: '/about' },
+                { name: t('nav.contact'), href: '/contact' }
               ].map((link) => (
                 <li key={link.name}>
-                  <a 
-                    href={link.href} 
-                    onClick={(e) => {
-                      e.preventDefault();
-                      document.querySelector(link.href)?.scrollIntoView({ behavior: 'smooth' });
-                    }}
+                  <Link 
+                    to={link.href}
                     className="hover:text-green-600 transition-colors duration-300 font-medium"
                   >
                     {link.name}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
