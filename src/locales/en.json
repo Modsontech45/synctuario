@@ -87,6 +87,14 @@
       },
       "itTips": {
         "title": "IT Tips & Technology Hub",
+        "description": "A comprehensive technology resource platform featuring programming tutorials, software reviews, cybersecurity tips, and the latest tech trends. Includes code snippets, troubleshooting guides, and career advice for IT professionals.",
+        "features": [
+          "Programming tutorials",
+          "Tech news & reviews",
+          "Cybersecurity guides",
+          "Career development tips"
+        ]
+      },
       "smartHome": {
         "title": "Smart Home Automation System",
         "description": "An intelligent IoT-based home automation system that allows users to control lighting, temperature, security, and appliances remotely. Features voice control integration, energy monitoring, automated scheduling, and mobile app connectivity.",
@@ -103,38 +111,9 @@
         "features": [
           "Create and manage boards",
           "Task organization & tracking",
-          "Team collaboration & invites",
+          "Team collaboration & invites"
+        ]
       },
-      "boardManager": {
-        "title": "Board & Task Management System",
-        "description": "A collaborative project management platform that enables teams to create boards, organize tasks, and invite team members for seamless collaboration. Features real-time updates, drag-and-drop functionality, and comprehensive project tracking capabilities.",
-        "features": [
-          "Create and manage boards",
-          "Task organization & tracking",
-          "Team collaboration & invites",
-      },
-      "boardManager": {
-        "title": "Board & Task Management System",
-        "description": "A collaborative project management platform that enables teams to create boards, organize tasks, and invite team members for seamless collaboration. Features real-time updates, drag-and-drop functionality, and comprehensive project tracking capabilities.",
-        "features": [
-          "Create and manage boards",
-          "Task organization & tracking",
-          "Team collaboration & invites",
-      },
-      "boardManager": {
-        "title": "Board & Task Management System",
-        "description": "A collaborative project management platform that enables teams to create boards, organize tasks, and invite team members for seamless collaboration. Features real-time updates, drag-and-drop functionality, and comprehensive project tracking capabilities.",
-        "features": [
-          "Create and manage boards",
-          "Task organization & tracking",
-          "Team collaboration & invites",
-      },
-      "boardManager": {
-        "title": "Board & Task Management System",
-        "description": "A collaborative project management platform that enables teams to create boards, organize tasks, and invite team members for seamless collaboration. Features real-time updates, drag-and-drop functionality, and comprehensive project tracking capabilities.",
-        "features": [
-          "Create and manage boards",
-          "Task organization & tracking",
       "taskflow": {
         "title": "TaskFlow - Board & Task Management",
         "description": "A collaborative project management platform that helps you create boards, add tasks, and invite friends for seamless team collaboration. Features intuitive drag-and-drop functionality and real-time synchronization.",
