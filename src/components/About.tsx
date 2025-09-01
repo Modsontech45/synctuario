@@ -153,23 +153,6 @@ const About = () => {
               </div>
             </div>
           </div>
-        </div>
-      </div>
-                      key={stat.label}
-                      className="text-center p-6 bg-gray-50 rounded-2xl border border-gray-100 hover:border-green-200 hover:bg-green-50 transition-all duration-500 group animate-scaleIn"
-                      style={{ animationDelay: `${index * 100}ms` }}
-                    >
-                      <div className="text-3xl font-black text-green-500 mb-2 group-hover:scale-110 transition-transform duration-300">
-                        {stat.number}
-                      </div>
-                      <div className="text-sm text-gray-600 font-medium">{stat.label}</div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
     </section>
   );
