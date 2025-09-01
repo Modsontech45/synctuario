@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-import { ExternalLink, Calendar, Users, Shield, DollarSign, Cpu, Home } from 'lucide-react';
+import { ExternalLink, Calendar, Users, Shield, DollarSign, Cpu, Home, ArrowRight } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 
 const Portfolio = () => {
