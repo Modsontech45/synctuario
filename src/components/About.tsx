@@ -120,6 +120,41 @@ const About = () => {
                     { number: '3+', label: t('about.yearsExperience') }
                   ].map((stat, index) => (
                     <div 
+        {/* Personal Story Section */}
+        <div className="lg:col-span-2 mt-20 fade-in-section">
+          <div className="bg-gradient-to-r from-gray-50 to-green-50 rounded-3xl p-12 border border-gray-100 shadow-xl hover:shadow-2xl transition-all duration-700">
+            <div className="max-w-4xl mx-auto">
+              <h3 className="text-3xl font-bold text-black mb-8 text-center">Meet Modson</h3>
+              
+              <div className="prose prose-lg max-w-none text-gray-700 leading-relaxed space-y-6">
+                <p className="text-xl font-medium text-green-600 mb-6">
+                  Hi, I'm Modson, the mind behind Synctuario.
+                </p>
+                
+                <p>
+                  My journey began with a simple curiosity: how do things really work? That curiosity grew into a passion for embedded systems, robotics, and web development—fields where logic meets creativity. I started experimenting with microcontrollers like Arduino, ESP32, and Raspberry Pi, writing code in C++ and Python, and building projects that connected hardware to the digital world.
+                </p>
+                
+                <p>
+                  Over time, I realized that technology is not just about circuits or lines of code—it's about solving real problems, making life easier, and creating experiences that feel alive. That's where the name Synctuario came from: a sanctuary where ideas synchronize, grow, and take form.
+                </p>
+                
+                <p>
+                  Through this portfolio, I'm not just showcasing projects—I'm telling the story of my growth. From wiring my first LED to building systems that integrate hardware, software, and the web, every step reflects my belief in learning, experimenting, and sharing knowledge.
+                </p>
+                
+                <p>
+                  Beyond coding, I'm building a brand that documents my journey rather than perfection. I want to show that progress is made of trials, small wins, and the courage to keep creating.
+                </p>
+                
+                <p className="text-xl font-medium text-green-600">
+                  If you're here, welcome to my world of exploration. This is not just a portfolio—it's a reflection of how far I've come, and a glimpse of where I'm heading.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
                       key={stat.label}
                       className="text-center p-6 bg-gray-50 rounded-2xl border border-gray-100 hover:border-green-200 hover:bg-green-50 transition-all duration-500 group animate-scaleIn"
                       style={{ animationDelay: `${index * 100}ms` }}
@@ -141,3 +176,4 @@ const About = () => {
 };
 
 export default About;
+      <div className="relative fade-in-section lg:col-span-1">
