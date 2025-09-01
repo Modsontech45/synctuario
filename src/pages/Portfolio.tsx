@@ -112,6 +112,7 @@
           "Create and manage boards",
           "Task organization & tracking",
           "Team collaboration & invites",
+        ]
       },
       "boardManager": {
         "title": "Board & Task Management System",
