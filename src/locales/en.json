@@ -120,14 +120,16 @@
           "Create and manage boards",
           "Task organization & tracking",
           "Team collaboration & invites",
-      "taskflow": {
-        "title": "TaskFlow - Board & Task Management",
+          "Real-time synchronization"
+        ]
+      },
+      "boardManager": {
+        "title": "Board & Task Management System",
         "description": "A collaborative project management platform that enables teams to create boards, organize tasks, and invite team members for seamless collaboration. Features real-time updates, drag-and-drop functionality, and comprehensive project tracking capabilities.",
         "features": [
           "Create and manage boards",
           "Task organization & tracking",
           "Team collaboration & invites",
-          "Real-time synchronization"
         ]
       }
     }
